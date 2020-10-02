@@ -44,7 +44,7 @@ module GitChain
             branches = chain.branch_names.map { |b| "{{cyan:#{b}}}" }
 
             prefix = cn == current ? "{{yellow:*}} " : "  " if current
-            GitChain::Logger.info("#{prefix}{{blue:#{chain.name}}} [#{branches.join(' -> ')}]")
+            GitChain::Logger.info("#{prefix}{{blue:#{chain.name}}} [#{branches.join(' -> ')}]\n")
           end
         end
       end
