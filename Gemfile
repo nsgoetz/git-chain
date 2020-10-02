@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.3.7'
+ruby '2.6.3'
 
 # None of these can actually be used in a development copy of dev
 # They are all for CI and tests
