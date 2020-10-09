@@ -17,12 +17,12 @@ single command: `git chain rebase`.
 ## Requirements
 
 - Git (of course)
-- System Ruby (`/usr/bin/ruby -v >= 2.3.7`) 
+- System Ruby (`/usr/bin/ruby -v >= 2.6.3`) 
 
 ## Installation
 
 ```sh
-$ git clone https://github.com/Shopify/git-chain /usr/local/share/git-chain # Or any folder you see fit
+$ git clone https://github.com/nsgoetz/git-chain /usr/local/share/git-chain # Or any folder you see fit
 $ ln -sv /usr/local/share/git-chain/bin/git-chain /usr/local/bin/ # Or any location in your PATH
 
 $ git chain # Should now work
