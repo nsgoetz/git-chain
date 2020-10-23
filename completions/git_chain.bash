@@ -72,11 +72,15 @@ _git_chain_list() {
   COMPREPLY=("-s" "--short")
 }
 
+_git_chain_arcdiff() {
+  COMPREPLY=()
+}
+
 _git_chain() {
   COMPREPLY=()
   local word="${COMP_WORDS[COMP_CWORD]}"
   local words=("${COMP_WORDS[@]}")
-  local commands="branch list push rebase setup"
+  local commands="branch list push rebase setup arcdiff"
 
 
   if [[ "$COMP_CWORD" -eq 2 ]]; then 
@@ -102,6 +106,9 @@ _git_chain() {
         ;;
       "setup" )
         _git_chain_setup
+        ;;
+      "arcdiff" )
+        _git_chain_arcdiff
         ;;
       * ) ;;
     esac

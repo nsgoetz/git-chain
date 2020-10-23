@@ -6,6 +6,7 @@ module GitChain
     autoload :Rebase, 'git_chain/commands/rebase'
     autoload :Push, 'git_chain/commands/push'
     autoload :Setup, 'git_chain/commands/setup'
+    autoload :Arcdiff, 'git_chain/commands/arcdiff'
 
     ArgError = Class.new(ArgumentError)
 

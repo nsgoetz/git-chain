@@ -98,8 +98,13 @@ module GitChain
       end
 
       def rebase_in_progress?(dir: nil)
-        dir ||= ".git"
-        File.exist?(File.expand_path(File.join(dir, "REBASE_HEAD")))
+        begin
+          exec('rebase', '--show-current-patch')
+        rescue
+          false
+        else
+          true
+        end
       end
 
       private
