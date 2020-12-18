@@ -14,7 +14,8 @@ module GitChain
           raise(Abort, "A rebase is in progress. Please finish the rebase first and run 'git chain rebase' after.")
         end
 
-        raise(Abort, "Current branch '#{Git.current_branch}' is not in a chain.") unless options[:chain_name]
+        current_branch_name = Git.current_branch
+        raise(Abort, "Current branch '#{current_branch_name}' is not in a chain.") unless options[:chain_name]
 
         chain = GitChain::Models::Chain.from_config(options[:chain_name])
         raise(Abort, "Chain '#{options[:chain_name]}' does not exist.") if chain.empty?
@@ -63,6 +64,11 @@ module GitChain
         else
           puts_info("Chain {{info:#{chain.name}}} is already up-to-date.")
         end
+        
+        if current_branch_name != Git.current_branch
+          Git.checkout(branch: current_branch_name)
+        end 
+
       end
 
       private

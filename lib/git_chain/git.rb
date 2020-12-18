@@ -28,6 +28,12 @@ module GitChain
         []
       end
 
+      def checkout(branch: '', dir: nil)
+        exec('checkout', "#{branch}", dir: dir).split
+      rescue Failure
+        []
+      end
+
       def chains(chain_name: nil, dir: nil)
         args = %w(config --null --get-regexp ^branch\\..+\\.chain$)
         args << "^#{Regexp.escape(chain_name)}$" if chain_name

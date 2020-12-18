@@ -80,7 +80,7 @@ _git_chain() {
   COMPREPLY=()
   local word="${COMP_WORDS[COMP_CWORD]}"
   local words=("${COMP_WORDS[@]}")
-  local commands="branch list push rebase setup arcdiff"
+  local commands="branch list push rebase setup arcdiff up down"
 
 
   if [[ "$COMP_CWORD" -eq 2 ]]; then 

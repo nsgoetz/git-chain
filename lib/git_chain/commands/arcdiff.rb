@@ -6,7 +6,7 @@ module GitChain
       include Options::ChainName
 
       def description
-        "creates a phab dif with only the changes since the prev branhc in the chain"
+        "creates a phab dif with only the changes since the prev branch in the chain"
       end
 
       def run(options)
@@ -28,7 +28,7 @@ module GitChain
 
         GitChain::Logger.warn("arc diff #{parent_branch_name}")
         
-        exec('arc', 'diff', parent_branch_name)
+        exec('arc', 'diff', current_branch.branch_point)
 
       end
 
